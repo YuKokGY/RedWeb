@@ -65,11 +65,33 @@
                 }
                 ;
             }
-            //实现页面加载完成调用后台爬去功能
+            //实现页面加载完成调用后台爬取功能
             $.ajax({
                 type: "Post",
                 url: "http://localhost:8080/user/go.do",
             });
+        }
+    </script>
+    <%--检测是否已经登录 如果已经登录 则跳转到电影界面--%>
+    <script>
+        function checkMovieLogin(name) {
+            if (name!=""){
+                $("#movie").attr("href","${pageContext.request.contextPath}/movie/getMovie.do");
+            }
+            else {
+                alert("请先登录");
+            }
+        }
+    </script>
+
+    <script>
+        function checkPicLogin(name) {
+            if (name!=""){
+                $("#pic").attr("href","${pageContext.request.contextPath}/pic/getPic.do");
+            }
+            else {
+                alert("请先登录");
+            }
         }
     </script>
 
@@ -95,8 +117,8 @@
                         <div class="login" style="display: none">
                             <a href="${pageContext.request.contextPath}/user/toLogin.do">当前在线：${user.username}</a>
                         </div>
-                        <a  href="${pageContext.request.contextPath}/movie/getMovie.do">电影</a>
-                        <a  href="${pageContext.request.contextPath}/pic/getPic.do">最新摄影图</a>
+                        <a id="movie" href=""  onclick="checkMovieLogin('${user.username}')">电影</a>
+                        <a id="pic" href=""  onclick="checkPicLogin('${user.username}')">最新摄影图</a>
                         <div class="outlogin" style="display: none">
                             <a href="${pageContext.request.contextPath}/user/toMain.do">退出登录</a>
                         </div>

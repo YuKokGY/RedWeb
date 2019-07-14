@@ -64,17 +64,41 @@
         $.ajax({
             type: "GET",
             url: url,
-            dataType: "jsonp",
-            success: function (xhr) {
-                alert(xhr.status)
-                url1=url;
-                window.location.href = url1;
+            dataType: "json",
+            // success: function (xhr) {
+            //     alert(xhr.status)
+            //     url1=url;
+            //     window.location.href = url1;
+            // },
+            // error: function (xhr) {
+            //     alert(xhr.readyState+"==="+xhr.status)
+            //     var index = url.lastIndexOf("-");
+            //     bigurl = url.substring(0, index) + "-sd2.jpg"
+            //     window.location.href = bigurl;
+            // }
+            success: function (result) {
+                alert(result.status)
+                if (result == "success") {
+                    url1 = url;
+                    window.location.href = url1;
+                }
+                else if (result == "error") {
+                    var index = url.lastIndexOf("-");
+                    bigurl = url.substring(0, index) + "-sd2.jpg"
+                    window.location.href = bigurl;
+                }
             },
-            error: function (xhr) {
-                alert(xhr.readyState+"==="+xhr.status)
-                var index = url.lastIndexOf("-");
-                bigurl = url.substring(0, index) + "-sd2.jpg"
-                window.location.href = bigurl;
+            error: function (result) {
+                alert(result.status)
+                if (result.status == 10) {
+                    url1 = url;
+                    window.location.href = url1;
+                }
+                else if (result.status == 0) {
+                    var index = url.lastIndexOf("-");
+                    bigurl = url.substring(0, index) + "-sd2.jpg"
+                    window.location.href = bigurl;
+                }
             }
         });
     }

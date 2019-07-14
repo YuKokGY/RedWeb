@@ -32,6 +32,7 @@ public class CheckInput {
         for (User user1 : users) {
             password = user1.getPassword();
         }
+        System.out.println(user.getusername()+"---"+"username");
         System.out.println(user.getPassword()+"---"+password);
         if (user.getPassword().equals(password)==false){
             flag=false;

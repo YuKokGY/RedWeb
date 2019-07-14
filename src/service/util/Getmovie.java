@@ -72,7 +72,7 @@ public class Getmovie {
         Pic pic=new Pic();
         driver.get("https://www.48tu.cn/");
         List<WebElement> elements=driver.findElements(By.xpath("//*//div[@class=\"thumb\"]//a//img"));
-        System.out.println(elements.size());
+        //System.out.println(elements.size());
         for (WebElement element:elements){
             pic.setUrl(element.getAttribute("src"));
             //获取大图的url
