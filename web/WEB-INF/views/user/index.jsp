@@ -65,6 +65,7 @@
                 }
                 ;
             }
+            //实现页面加载完成调用后台爬去功能
             $.ajax({
                 type: "Post",
                 url: "http://localhost:8080/user/go.do",
