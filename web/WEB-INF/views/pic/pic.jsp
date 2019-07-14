@@ -77,26 +77,26 @@
             //     window.location.href = bigurl;
             // }
             success: function (result) {
-                alert(result.status)
+                alert(result.status);
                 if (result == "success") {
                     url1 = url;
                     window.location.href = url1;
                 }
                 else if (result == "error") {
                     var index = url.lastIndexOf("-");
-                    bigurl = url.substring(0, index) + "-sd2.jpg"
+                    bigurl = url.substring(0, index) + "-sd2.jpg";
                     window.location.href = bigurl;
                 }
             },
             error: function (result) {
-                alert(result.status)
+                alert(result.status);
                 if (result.status == 10) {
                     url1 = url;
                     window.location.href = url1;
                 }
                 else if (result.status == 0) {
                     var index = url.lastIndexOf("-");
-                    bigurl = url.substring(0, index) + "-sd2.jpg"
+                    bigurl = url.substring(0, index) + "-sd2.jpg";
                     window.location.href = bigurl;
                 }
             }
