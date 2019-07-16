@@ -61,45 +61,54 @@
 <script>
     function checkUrl(url) {
         jQuery.support.cors = true;
-        $.ajax({
-            type: "GET",
-            url: url,
-            dataType: "json",
-            // success: function (xhr) {
-            //     alert(xhr.status)
-            //     url1=url;
-            //     window.location.href = url1;
-            // },
-            // error: function (xhr) {
-            //     alert(xhr.readyState+"==="+xhr.status)
-            //     var index = url.lastIndexOf("-");
-            //     bigurl = url.substring(0, index) + "-sd2.jpg"
-            //     window.location.href = bigurl;
-            // }
-            success: function (result) {
-                alert(result.status);
-                if (result == "success") {
-                    url1 = url;
-                    window.location.href = url1;
-                }
-                else if (result == "error") {
-                    var index = url.lastIndexOf("-");
-                    bigurl = url.substring(0, index) + "-sd2.jpg";
-                    window.location.href = bigurl;
-                }
+
+        //ajax问题还未解决  使用以下方法可以解决辨别404
+        // $.ajax({
+        //     type: "GET",
+        //     url: url,
+        //     success: function (response) {
+        //         alert(response.status)
+        //         url1=url;
+        //         window.location.href = url1;
+        //     },
+        //     error: function (response) {
+        //         alert(response.readyState+"==="+response.status)
+        //         var index = url.lastIndexOf("-");
+        //         bigurl = url.substring(0, index) + "-sd2.jpg"
+        //         window.location.href = bigurl;
+        //     }
+        // });
+
+
+        //调用检测方法  如果返回的异步结果成功 执行这个操作
+        isRunUrl(url).then(function (data) {
+                url1 = url;
+                window.location.href = url1;
             },
-            error: function (result) {
-                alert(result.status);
-                if (result.status == 10) {
-                    url1 = url;
-                    window.location.href = url1;
-                }
-                else if (result.status == 0) {
-                    var index = url.lastIndexOf("-");
-                    bigurl = url.substring(0, index) + "-sd2.jpg";
-                    window.location.href = bigurl;
-                }
+            //如果异步操作失败执行以下操作
+            function (error) {
+                var index = url.lastIndexOf("-");
+                bigurl = url.substring(0, index) + "-sd2.jpg";
+                window.location.href = bigurl;
             }
+        )
+    }
+
+    var isRunUrl = function (url) {
+        return new Promise(function (resolve, reject) {
+            // 测试链接连通性, 主要检测404错误
+            // 由于AJAX通常无法区分404和跨域问题
+            // 所以只能用script 或者 link标签
+            // link比script更容易捕获错误
+            var dom = document.createElement('link');
+            dom.href = url;
+            dom.rel = 'stylesheet';
+            document.head.appendChild(dom);
+            dom.onload = function () {
+                document.head.removeChild(dom);
+                resolve();
+            };
+            dom.onerror = reject;
         });
     }
 </script>

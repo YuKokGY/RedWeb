@@ -1,10 +1,4 @@
-<%@ page import="service.util.Getmovie" %>
-<%@ page import="java.util.List" %>
-<%@ page import="model.Pic" %>
-<%@ page import="org.springframework.beans.factory.annotation.Autowired" %>
-<%@ page import="org.springframework.ui.Model" %>
-<%@ page import="service.MovieService" %>
-<%@ page import="model.User" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: Administrator
   Date: 2019/5/24
@@ -19,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="keywords" content=""/>
-    <meta name="referrer" content="never">
+    <meta name="referrer" content="never" onmousewheel="top.document.body.scrollTop-=event.wheelDelta">
     <script type="application/x-javascript"> addEventListener("load", function () {
         setTimeout(hideURLbar, 0);
     }, false);
@@ -53,17 +47,14 @@
                 for (var i = 0; i < unlogin.length; i++) {
                     unlogin[i].style.display = "none";
                 }
-                ;
                 var login = document.getElementsByClassName("login");
                 for (var i = 0; i < login.length; i++) {
                     login[i].style.display = "block";
                 }
-                ;
                 var outlogin = document.getElementsByClassName("outlogin");
                 for (var i = 0; i < outlogin.length; i++) {
                     outlogin[i].style.display = "block";
                 }
-                ;
             }
             //实现页面加载完成调用后台爬取功能
             $.ajax({
