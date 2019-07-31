@@ -67,7 +67,7 @@
     <script>
         function checkMovieLogin(name) {
             if (name!=""){
-                $("#movie").attr("href","${pageContext.request.contextPath}/movie/getMovie.do");
+                $("#movie").attr("href", "${pageContext.request.contextPath}/movie/showMovie.do");
             }
             else {
                 alert("请先登录");
@@ -110,6 +110,8 @@
                         </div>
                         <a id="movie" href=""  onclick="checkMovieLogin('${user.username}')">电影</a>
                         <a id="pic" href=""  onclick="checkPicLogin('${user.username}')">最新摄影图</a>
+                        <a id="news1" href="${pageContext.request.contextPath}/news/get.do"
+                           onclick="checkPicLogin('${user.username}')">新闻</a>
                         <div class="outlogin" style="display: none">
                             <a href="${pageContext.request.contextPath}/user/toMain.do">退出登录</a>
                         </div>

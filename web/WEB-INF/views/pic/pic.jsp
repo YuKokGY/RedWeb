@@ -58,6 +58,7 @@
     </div><!-- container -->
 </section>
 
+<%--点击判断页面是否为404  如果是 则改后缀--%>
 <script>
     function checkUrl(url) {
         jQuery.support.cors = true;
@@ -83,13 +84,13 @@
         //调用检测方法  如果返回的异步结果成功 执行这个操作
         isRunUrl(url).then(function (data) {
                 url1 = url;
-                window.location.href = url1;
+                window.location.href = url1
             },
             //如果异步操作失败执行以下操作
             function (error) {
                 var index = url.lastIndexOf("-");
                 bigurl = url.substring(0, index) + "-sd2.jpg";
-                window.location.href = bigurl;
+                window.location.href = bigurl
             }
         )
     }

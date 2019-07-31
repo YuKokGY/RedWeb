@@ -20,9 +20,7 @@ public class CheckInput {
     public Boolean isUserExist(User user){
         List<User> users=userService.findByname(user);
         //用户名存在
-        if (users.size()!=0){
-            flag=true;
-        }else flag=false;
+        flag = users.size() != 0;
         return flag;
     }
 
@@ -32,12 +30,9 @@ public class CheckInput {
         for (User user1 : users) {
             password = user1.getPassword();
         }
-        System.out.println(user.getusername()+"---"+"username");
-        System.out.println(user.getPassword()+"---"+password);
-        if (user.getPassword().equals(password)==false){
-            flag=false;
-        }else
-            flag=true;
+//        System.out.println(user.getusername()+"---"+"username");
+//        System.out.println(user.getPassword()+"---"+password);
+        flag = user.getPassword().equals(password) != false;
             return flag;
     }
 }

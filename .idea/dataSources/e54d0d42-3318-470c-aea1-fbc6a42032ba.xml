@@ -1105,139 +1105,177 @@
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
     <table id="277" parent="5" name="movie"/>
-    <table id="278" parent="5" name="pic"/>
-    <table id="279" parent="5" name="pic2"/>
-    <table id="280" parent="5" name="user"/>
-    <column id="281" parent="277" name="id">
+    <table id="278" parent="5" name="news"/>
+    <table id="279" parent="5" name="pic"/>
+    <table id="280" parent="5" name="pic2"/>
+    <table id="281" parent="5" name="user"/>
+    <column id="282" parent="277" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="282" parent="277" name="moviename">
+    <column id="283" parent="277" name="moviename">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="283" parent="277" name="movierate">
+    <column id="284" parent="277" name="movierate">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="284" parent="277" name="movietime">
+    <column id="285" parent="277" name="movietime">
       <Position>4</Position>
       <DataType>varchar(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="285" parent="277" name="movieregion">
+    <column id="286" parent="277" name="movieregion">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="286" parent="277" name="moviedirector">
+    <column id="287" parent="277" name="moviedirector">
       <Position>6</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="287" parent="277" name="movieactors">
+    <column id="288" parent="277" name="movieactors">
       <Position>7</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="288" parent="277" name="moviename">
+    <index id="289" parent="277" name="moviename">
       <ColNames>moviename</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="289" parent="277" name="PRIMARY">
+    <key id="290" parent="277" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="290" parent="277" name="moviename">
+    <key id="291" parent="277" name="moviename">
       <ColNames>moviename</ColNames>
       <UnderlyingIndexName>moviename</UnderlyingIndexName>
     </key>
-    <column id="291" parent="278" name="url">
+    <column id="292" parent="278" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="293" parent="278" name="title">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="294" parent="278" name="picurl">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="295" parent="278" name="time">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="296" parent="278" name="title">
+      <ColNames>title</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <key id="297" parent="278" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="298" parent="278" name="title">
+      <ColNames>title</ColNames>
+      <UnderlyingIndexName>title</UnderlyingIndexName>
+    </key>
+    <column id="299" parent="279" name="url">
       <Position>1</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="292" parent="278" name="id">
+    <column id="300" parent="279" name="id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="293" parent="278" name="url">
+    <index id="301" parent="279" name="url">
       <ColNames>url</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="294" parent="278" name="PRIMARY">
+    <key id="302" parent="279" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="295" parent="278" name="url">
+    <key id="303" parent="279" name="url">
       <ColNames>url</ColNames>
       <UnderlyingIndexName>url</UnderlyingIndexName>
     </key>
-    <column id="296" parent="279" name="id">
+    <column id="304" parent="280" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="297" parent="279" name="url">
+    <column id="305" parent="280" name="url">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="298" parent="279" name="bigurl">
+    <column id="306" parent="280" name="bigurl">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="299" parent="279" name="url">
+    <index id="307" parent="280" name="url">
       <ColNames>url</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="300" parent="279" name="PRIMARY">
+    <key id="308" parent="280" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="301" parent="279" name="url">
+    <key id="309" parent="280" name="url">
       <ColNames>url</ColNames>
       <UnderlyingIndexName>url</UnderlyingIndexName>
     </key>
-    <column id="302" parent="280" name="id">
+    <column id="310" parent="281" name="id">
       <Position>1</Position>
       <DataType>int(255)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="303" parent="280" name="username">
+    <column id="311" parent="281" name="username">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="304" parent="280" name="password">
+    <column id="312" parent="281" name="password">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="305" parent="280" name="e-mail">
+    <column id="313" parent="281" name="e-mail">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="306" parent="280" name="PRIMARY">
+    <key id="314" parent="281" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

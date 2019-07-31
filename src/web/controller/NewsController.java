@@ -1,33 +1,22 @@
 package web.controller;
 
-import model.Pic;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import service.MovieService;
-
-import java.util.List;
+import service.NewsService;
+import service.util.Getnews;
 
 @Controller
-@RequestMapping("/pic")
+@RequestMapping("/news")
 public class NewsController {
-
     @Autowired
-    MovieService movieService;
+    private Getnews getNews;
+    @Autowired
+    private NewsService newsService;
 
-    //跳转到新闻页面
-    @RequestMapping("/toPic")
-    public String toPic(){
-        return "pic/pic";
-    }
-
-    //获取图片
-    @RequestMapping("/getPic")
-    public String getPic(Pic pic, Model model){
-        List<Pic> pics=movieService.findpic();
-        model.addAttribute("pics",pics);
-        return "forward:/pic/toPic.do";
+    //跳转到新闻爬取
+    @RequestMapping("/get")
+    public void get() {
+        getNews.gethot_news();
     }
 }

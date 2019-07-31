@@ -26,14 +26,13 @@ public class MovieController {
         return "movie/movie";
     }
 
-    //将电影数据储存到数据库
-    @RequestMapping("/getMovie")
-    public String getMovie(){
-        getmovie.getnowplaying();
-        return "forward:/movie/showMovie.do";
-    }
+//    //将电影数据储存到数据库
+//    @RequestMapping("/getMovie")
+//    public String getMovie(){
+//        return "forward:/movie/showMovie.do";
+//    }
 
-    //在数据库中拿图片
+    //在数据库中拿数据
     @RequestMapping("/showMovie")
     public String showMovie(Model model){
         List<Moviepic> moviepics=movieService.findmoviepic();

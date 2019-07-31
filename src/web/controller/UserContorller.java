@@ -2,7 +2,6 @@ package web.controller;
 
 import model.Pic;
 import model.User;
-import org.apache.http.HttpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,10 +12,6 @@ import service.UserService;
 import service.util.CheckInput;
 import service.util.Getmovie;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -42,8 +37,9 @@ public class UserContorller {
     //页面加载完的时候后台爬取最新图片
     @RequestMapping("/go")
     public void go(){
-        System.out.println("我被调用了");
+//        System.out.println("我被调用了");
         getmovie.getPic();
+        getmovie.getnowplaying();
     }
 
     //跳转到登录界面

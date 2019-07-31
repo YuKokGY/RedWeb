@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.NewsMapper">
+    <cache></cache>
+
+    <insert id="addnewstitle" parameterType="news">
+        insert into news (title) value (#{title})
+    </insert>
+
+    <insert id="addnewstime" parameterType="news">
+       update news set time=#{time} where time is null or time =''
+    </insert>
+
+    <insert id="addnewsurl" parameterType="news">
+       update news set url=#{url} where url is null or url =''
+    </insert>
+
+</mapper>
