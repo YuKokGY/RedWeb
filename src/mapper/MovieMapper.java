@@ -6,8 +6,9 @@ import java.util.List;
 
 public interface MovieMapper {
 
-    public void addinfo(Movie movie);
+    void addinfo(Movie movie);
 
-    public List<Movie> findallmovieinfo();
+    List<Movie> findallmovieinfo();
+
 
 }

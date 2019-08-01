@@ -51,5 +51,4 @@ public class MovieServiceImpl implements MovieService {
     public void saveurlpic(Pic pic) {
         picMapper.addurl(pic);
     }
-
 }

@@ -11,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import service.MovieService;
+
 import java.util.List;
 
 @Service
@@ -18,6 +19,7 @@ public class Getmovie {
     private WebDriver driver;
     @Autowired
     MovieService movieService;
+    private Movie movie;
 
     public void setup() {
         //调用chrome driver  注意：路径是chromedriver.exe(要跟chrome版本对应才可以)
@@ -31,7 +33,7 @@ public class Getmovie {
 
     public void getnowplaying(){
         setup();
-        Movie movie =new Movie();
+        movie = new Movie();
         Moviepic moviepic=new Moviepic();
         driver.get("https://movie.douban.com/cinema/nowplaying/qingyuan/");
         //爬取正在上映的电影
@@ -58,6 +60,7 @@ public class Getmovie {
         for (WebElement element:picelement){
             //获取电影信息
             moviepic.setUrl(element.getAttribute("src"));
+            moviepic.setMoviesize(String.valueOf(elements.size()));
             try {
                 movieService.saveurl(moviepic);
             }catch (Exception e){

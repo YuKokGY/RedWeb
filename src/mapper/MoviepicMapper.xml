@@ -6,10 +6,11 @@
     <cache></cache>
 
     <insert id="addurl" parameterType="moviepic">
-        insert into pic (url) value (#{url})
+        insert into pic (url,moviesize) value (#{url},#{moviesize})
     </insert>
 
     <select id="findallpic" resultType="moviepic">
         select * from pic order by id desc
     </select>
+
 </mapper>

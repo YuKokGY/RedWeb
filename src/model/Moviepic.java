@@ -5,8 +5,17 @@ import java.io.Serializable;
 public class Moviepic implements Serializable {
     private int id;
     private String url;
+    private String moviesize;
 
     public Moviepic() {
+    }
+
+    public String getMoviesize() {
+        return moviesize;
+    }
+
+    public void setMoviesize(String moviesize) {
+        this.moviesize = moviesize;
     }
 
     public int getId() {

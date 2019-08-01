@@ -37,8 +37,13 @@ public class MovieController {
     public String showMovie(Model model){
         List<Moviepic> moviepics=movieService.findmoviepic();
         List<Movie> movies=movieService.findmovieinfo();
+        String num = null;
+        for (Moviepic movie : moviepics) {
+            num = movie.getMoviesize();
+        }
         model.addAttribute("movies",movies);
         model.addAttribute("moviepics",moviepics);
+        model.addAttribute("num", num);
         return "forward:/movie/toMovie.do";
     }
 

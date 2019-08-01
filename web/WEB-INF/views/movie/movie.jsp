@@ -1,5 +1,4 @@
-<%@ page import="java.util.List" %>
-<%@ page import="model.Movie" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: Administrator
   Date: 2019/6/1
@@ -74,7 +73,7 @@
             <div class="container w3ls-service" id="service" style="margin-top: 100px">
                 <h3 class="center">正在上映的电影</h3>
 
-                <c:forEach items="${moviepics}" begin="0"  var="moviepic" varStatus="s">
+                <c:forEach items="${moviepics}" var="moviepic" varStatus="s" begin="0" end="${num}">
                 <div class="row-agile">
                     <div class="col-md-4 col-sm-4 col-xs-6 part1">
                         <a onclick="bigger('${moviepic.url}','${movies[s.count-1].moviename}','${movies[s.count-1].movierate}','${movies[s.count-1].movietime}','${movies[s.count-1].movieregion}','${movies[s.count-1].movieactors}','${movies[s.count-1].moviedirector}')">

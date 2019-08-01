@@ -24,6 +24,7 @@ public class Movie implements Serializable {
         this.movieactors = movieactors;
     }
 
+
     public int getId() {
         return id;
     }
@@ -86,8 +87,8 @@ public class Movie implements Serializable {
         return "Movie{" +
                 "id=" + id +
                 ", moviename='" + moviename + '\'' +
-                ", movierate=" + movierate +
-                ", movietime=" + movietime +
+                ", movierate='" + movierate + '\'' +
+                ", movietime='" + movietime + '\'' +
                 ", movieregion='" + movieregion + '\'' +
                 ", moviedirector='" + moviedirector + '\'' +
                 ", movieactors='" + movieactors + '\'' +

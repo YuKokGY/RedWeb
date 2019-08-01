@@ -13,4 +13,5 @@
     <select id="findallmovieinfo" resultType="movie">
         select * from movie order by id desc
     </select>
+
 </mapper>
