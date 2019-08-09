@@ -14,7 +14,11 @@
     </insert>
 
     <insert id="addnewsurl" parameterType="news">
-       update news set url=#{url} where url is null or url =''
+       update news set url=#{url} where url is null or url=''
     </insert>
+
+    <select id="findnewsinfo" resultType="news">
+        select * from news order by id desc
+    </select>
 
 </mapper>

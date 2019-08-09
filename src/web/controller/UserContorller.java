@@ -1,5 +1,6 @@
 package web.controller;
 
+import model.News;
 import model.Pic;
 import model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,9 +9,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import service.MovieService;
+import service.NewsService;
 import service.UserService;
 import service.util.CheckInput;
 import service.util.Getmovie;
+import service.util.Getnews;
 
 import java.util.List;
 
@@ -24,13 +27,20 @@ public class UserContorller {
     @Autowired
     private Getmovie getmovie;
     @Autowired
+    private Getnews getnews;
+    @Autowired
     private MovieService movieService;
+    @Autowired
+    private NewsService newsService;
 
     //跳转到主界面
     @RequestMapping("/toMain")
     public String toMain(Model model, Pic pic){
         List<Pic> pics=movieService.findpic();
+        List<News> news = newsService.findnewsinfo();
+        System.out.println("新闻数量" + news.size());
         model.addAttribute("pics",pics);
+        model.addAttribute("news", news);
         return "user/index";
     }
 
@@ -40,6 +50,8 @@ public class UserContorller {
 //        System.out.println("我被调用了");
         getmovie.getPic();
         getmovie.getnowplaying();
+        getnews.gethot_news();
+
     }
 
     //跳转到登录界面

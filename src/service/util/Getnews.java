@@ -40,7 +40,7 @@ public class Getnews {
         }
         //获取最新新闻标题
         List<WebElement> elementstitle = driver.findElements(By.xpath("//*//li[@ga_event=\"article_item_click\"]//a[@class=\"link title\"]"));
-        System.out.println(elementstitle.size());
+        System.out.println("新闻的标题" + elementstitle.size());
         for (WebElement element : elementstitle) {
             news.setTitle(element.getText());
             try {
@@ -52,7 +52,7 @@ public class Getnews {
 
         //获取最新新闻时间
         List<WebElement> elementstime = driver.findElements(By.xpath("//*//li[@ga_event=\"article_item_click\"]//span[@class=\"lbtn\"]"));
-        System.out.println(elementstime.size());
+        System.out.println("新闻的时间" + elementstime.size());
         for (WebElement element : elementstime) {
 //            System.out.println(element.getText());
             news.setTime(element.getText());
@@ -65,7 +65,7 @@ public class Getnews {
 
         //获取最新新闻的url
         List<WebElement> elementspic = driver.findElements(By.xpath("//*//li[@ga_event=\"article_item_click\"]//a[@class=\"link title\"]"));
-        System.out.println(elementspic.size());
+        System.out.println("新闻的链接" + elementspic.size());
         for (WebElement element : elementspic) {
 //            System.out.println(element.getAttribute("href"));
             news.seturl(element.getAttribute("href"));

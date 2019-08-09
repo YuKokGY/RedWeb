@@ -2,6 +2,8 @@ package service;
 
 import model.News;
 
+import java.util.List;
+
 public interface NewsService {
 
     //保存新闻标题
@@ -12,4 +14,7 @@ public interface NewsService {
 
     //保存新闻的跳转链接
     void saveurl(News news);
+
+    //查找新闻详情
+    List<News> findnewsinfo();
 }

@@ -42,7 +42,7 @@
                 <div class="col-md-6 col-0-gutter">
                     <a id="bigurl" onclick="checkUrl('${pic.bigurl}')">
                         <figure class="effect-bubba">
-                            <img src="${pic.url}" alt="img02" style="width: 400px;height: 300px"/>
+                            <img src="${pic.url}" alt="此图片无法加载" style="width: 400px;height: 300px"/>
                             <figcaption>
                                 <h2>YuKok & YuKie</h2>
                                 <p>RedWebTeam.Design</p>

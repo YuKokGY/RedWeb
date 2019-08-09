@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import service.NewsService;
 
+import java.util.List;
+
 @Service
 public class NewsServiceImpl implements NewsService {
 
@@ -25,6 +27,11 @@ public class NewsServiceImpl implements NewsService {
     @Override
     public void saveurl(News news) {
         newsMapper.addnewsurl(news);
+    }
+
+    @Override
+    public List<News> findnewsinfo() {
+        return newsMapper.findnewsinfo();
     }
 
 

@@ -38,7 +38,16 @@
 
     <!--页面加载时调用的方法-->
     <script>
-        window.onload = function checklogin() {
+        window.onload = function () {
+            checklogin();
+            getTime();
+        }
+    </script>
+
+
+    <%--检查是否登录--%>
+    <script>
+        function checklogin() {
             //获取后台传过来的参数
             var name = "${user.username}";
             //如果不是空，就显示当前登录的用户名
@@ -66,7 +75,7 @@
     <%--检测是否已经登录 如果已经登录 则跳转到电影界面--%>
     <script>
         function checkMovieLogin(name) {
-            if (name!=""){
+            if (name != "") {
                 $("#movie").attr("href", "${pageContext.request.contextPath}/movie/showMovie.do");
             }
             else {
@@ -77,8 +86,8 @@
 
     <script>
         function checkPicLogin(name) {
-            if (name!=""){
-                $("#pic").attr("href","${pageContext.request.contextPath}/pic/getPic.do");
+            if (name != "") {
+                $("#pic").attr("href", "${pageContext.request.contextPath}/pic/getPic.do");
             }
             else {
                 alert("请先登录");
@@ -86,6 +95,31 @@
         }
     </script>
 
+    <script>
+        function checkNewsLogin(name) {
+            if (name != "") {
+                $("#news1").attr("href", "${pageContext.request.contextPath}/news/getNews.do");
+            }
+            else {
+                alert("请先登录");
+            }
+        }
+    </script>
+
+    <%--获取当前的日期--%>
+    <script>
+        function getTime() {
+            var nowMonth = (new Date().getMonth() + 1).toString();
+            var nowDay = new Date().getDate().toString();
+            // console.log(nowMonth+"-"+nowDay)
+            document.getElementById("ri").innerText = nowDay;
+            document.getElementById("month").innerText = nowMonth + "月";
+            document.getElementById("ri2").innerText = nowDay;
+            document.getElementById("month2").innerText = nowMonth + "月";
+            document.getElementById("ri3").innerText = nowDay;
+            document.getElementById("month3").innerText = nowMonth + "月";
+        }
+    </script>
 
 </head>
 <body>
@@ -108,10 +142,9 @@
                         <div class="login" style="display: none">
                             <a href="${pageContext.request.contextPath}/user/toLogin.do">当前在线：${user.username}</a>
                         </div>
-                        <a id="movie" href=""  onclick="checkMovieLogin('${user.username}')">电影</a>
-                        <a id="pic" href=""  onclick="checkPicLogin('${user.username}')">最新摄影图</a>
-                        <a id="news1" href="${pageContext.request.contextPath}/news/get.do"
-                           onclick="checkPicLogin('${user.username}')">新闻</a>
+                        <a id="movie" href="" onclick="checkMovieLogin('${user.username}')">电影</a>
+                        <a id="pic" href="" onclick="checkPicLogin('${user.username}')">最新摄影图</a>
+                        <a id="news1" href="" onclick="checkNewsLogin('${user.username}')">新闻</a>
                         <div class="outlogin" style="display: none">
                             <a href="${pageContext.request.contextPath}/user/toMain.do">退出登录</a>
                         </div>
@@ -191,14 +224,18 @@
                     <img src="${pic.url}" alt="" style="width: 380px;height: 380px">
                 </c:forEach>
                 <div class="news-w3grid-info">
-                    <h5><span>10</span> April </h5>
+                    <h5><span id="ri"></span><h5 id="month"></h5></h5>
                     <h4>Donec cursus</h4>
-                    <p>Etiam ex lorem cursus vitae placerat suscipit dapibus tortor sed nec augue</p>
+                    <c:forEach items="${news}" var="new1" begin="0" end="0">
+                    <p>${new1.title}</p>
+
                     <div class="article-links">
                         <ul>
-                            <li><a href="#"><i class="glyphicon glyphicon-heart-empty"></i><span>1,052</span></a></li>
+                            <li><a href="#"><i class="glyphicon glyphicon-heart-empty"></i><span>${new1.time}</span></a>
+                            </li>
                             <li><a href="#"><i class="glyphicon glyphicon-comment"></i><span>10K</span></a></li>
                         </ul>
+                        </c:forEach>
                     </div>
                 </div>
             </div>
@@ -207,14 +244,18 @@
                     <img src="${pic.url}" alt="" style="width: 380px;height: 380px">
                 </c:forEach>
                 <div class="news-w3grid-info">
-                    <h5><span>15</span> April </h5>
+                    <h5><span id="ri2"></span><h5 id="month2"></h5></h5>
                     <h4>Suscipit dapib</h4>
-                    <p>Lorem cursus vitae placerat etiam ex suscipit dapibus tortor sed nec augue</p>
+                    <c:forEach items="${news}" var="new1" begin="1" end="1">
+                    <p>${new1.title}</p>
+
                     <div class="article-links">
                         <ul>
-                            <li><a href="#"><i class="glyphicon glyphicon-heart-empty"></i><span>1,052</span></a></li>
+                            <li><a href="#"><i class="glyphicon glyphicon-heart-empty"></i><span>${new1.time}</span></a>
+                            </li>
                             <li><a href="#"><i class="glyphicon glyphicon-comment"></i><span>10K</span></a></li>
                         </ul>
+                        </c:forEach>
                     </div>
                 </div>
             </div>
@@ -223,14 +264,18 @@
                     <img src="${pic.url}" alt="" style="width: 380px;height: 380px">
                 </c:forEach>
                 <div class="news-w3grid-info">
-                    <h5><span>18</span> April </h5>
+                    <h5><span id="ri3"></span><h5 id="month3"></h5></h5>
                     <h4>Tortor sed</h4>
-                    <p>Etiam ex lorem cursus vitae placerat suscipit dapibus tortor sed nec augue</p>
+                    <c:forEach items="${news}" var="new1" begin="2" end="2">
+                    <p>${new1.title}</p>
+
                     <div class="article-links">
                         <ul>
-                            <li><a href="#"><i class="glyphicon glyphicon-heart-empty"></i><span>1,052</span></a></li>
+                            <li><a href="#"><i class="glyphicon glyphicon-heart-empty"></i><span>${new1.time}</span></a>
+                            </li>
                             <li><a href="#"><i class="glyphicon glyphicon-comment"></i><span>10K</span></a></li>
                         </ul>
+                        </c:forEach>
                     </div>
                 </div>
             </div>
