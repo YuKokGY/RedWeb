@@ -219,67 +219,69 @@
     <div class="container">
         <h3 class="agileits-title w3title2"><span>N</span>ews </h3>
         <div class="news-agileinfo">
-            <div class="col-md-4 news-w3grid">
-                <c:forEach items="${pics}" var="pic" begin="12" end="12">
-                    <img src="${pic.url}" alt="" style="width: 380px;height: 380px">
-                </c:forEach>
-                <div class="news-w3grid-info">
-                    <h5><span id="ri"></span><h5 id="month"></h5></h5>
-                    <h4>Donec cursus</h4>
-                    <c:forEach items="${news}" var="new1" begin="0" end="0">
-                    <p>${new1.title}</p>
+            <div style="flex-direction: row">
+                <div class="col-md-4 news-w3grid">
+                    <c:forEach items="${pics}" var="pic" begin="12" end="12">
+                        <img src="${pic.url}" alt="" style="width: 380px;height: 380px">
+                    </c:forEach>
+                    <div class="news-w3grid-info">
+                        <h5><span id="ri"></span><h5 id="month"></h5></h5>
+                        <h4>Donec cursus</h4>
+                        <c:forEach items="${news}" var="new1" begin="0" end="0">
+                        <p>${new1.title}</p>
 
-                    <div class="article-links">
-                        <ul>
-                            <li><a href="#"><i class="glyphicon glyphicon-heart-empty"></i><span>${new1.time}</span></a>
-                            </li>
-                            <li><a href="#"><i class="glyphicon glyphicon-comment"></i><span>10K</span></a></li>
-                        </ul>
-                        </c:forEach>
+                        <div class="article-links">
+                            <ul>
+                                <li><a href="#"><i class="glyphicon glyphicon-heart-empty"></i><span>${new1.time}</span></a>
+                                </li>
+                                <li><a href="#"><i class="glyphicon glyphicon-comment"></i><span>10K</span></a></li>
+                            </ul>
+                            </c:forEach>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 news-w3grid">
-                <c:forEach items="${pics}" var="pic" begin="13" end="13">
-                    <img src="${pic.url}" alt="" style="width: 380px;height: 380px">
-                </c:forEach>
-                <div class="news-w3grid-info">
-                    <h5><span id="ri2"></span><h5 id="month2"></h5></h5>
-                    <h4>Suscipit dapib</h4>
-                    <c:forEach items="${news}" var="new1" begin="1" end="1">
-                    <p>${new1.title}</p>
+                <div class="col-md-4 news-w3grid">
+                    <c:forEach items="${pics}" var="pic" begin="13" end="13">
+                        <img src="${pic.url}" alt="" style="width: 380px;height: 380px">
+                    </c:forEach>
+                    <div class="news-w3grid-info">
+                        <h5><span id="ri2"></span><h5 id="month2"></h5></h5>
+                        <h4>Suscipit dapib</h4>
+                        <c:forEach items="${news}" var="new1" begin="1" end="1">
+                        <p>${new1.title}</p>
 
-                    <div class="article-links">
-                        <ul>
-                            <li><a href="#"><i class="glyphicon glyphicon-heart-empty"></i><span>${new1.time}</span></a>
-                            </li>
-                            <li><a href="#"><i class="glyphicon glyphicon-comment"></i><span>10K</span></a></li>
-                        </ul>
-                        </c:forEach>
+                        <div class="article-links">
+                            <ul>
+                                <li><a href="#"><i class="glyphicon glyphicon-heart-empty"></i><span>${new1.time}</span></a>
+                                </li>
+                                <li><a href="#"><i class="glyphicon glyphicon-comment"></i><span>10K</span></a></li>
+                            </ul>
+                            </c:forEach>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 news-w3grid">
-                <c:forEach items="${pics}" var="pic" begin="15" end="15">
-                    <img src="${pic.url}" alt="" style="width: 380px;height: 380px">
-                </c:forEach>
-                <div class="news-w3grid-info">
-                    <h5><span id="ri3"></span><h5 id="month3"></h5></h5>
-                    <h4>Tortor sed</h4>
-                    <c:forEach items="${news}" var="new1" begin="2" end="2">
-                    <p>${new1.title}</p>
+                <div class="col-md-4 news-w3grid">
+                    <c:forEach items="${pics}" var="pic" begin="14" end="14">
+                        <img src="${pic.url}" alt="" style="width: 380px;height: 380px">
+                    </c:forEach>
+                    <div class="news-w3grid-info">
+                        <h5><span id="ri3"></span><h5 id="month3"></h5></h5>
+                        <h4>Tortor sed</h4>
+                        <c:forEach items="${news}" var="new1" begin="2" end="2">
+                        <p>${new1.title}</p>
 
-                    <div class="article-links">
-                        <ul>
-                            <li><a href="#"><i class="glyphicon glyphicon-heart-empty"></i><span>${new1.time}</span></a>
-                            </li>
-                            <li><a href="#"><i class="glyphicon glyphicon-comment"></i><span>10K</span></a></li>
-                        </ul>
-                        </c:forEach>
+                        <div class="article-links">
+                            <ul>
+                                <li><a href="#"><i class="glyphicon glyphicon-heart-empty"></i><span>${new1.time}</span></a>
+                                </li>
+                                <li><a href="#"><i class="glyphicon glyphicon-comment"></i><span>10K</span></a></li>
+                            </ul>
+                            </c:forEach>
+                        </div>
                     </div>
                 </div>
+                <div class="clearfix"></div>
             </div>
-            <div class="clearfix"></div>
         </div>
     </div>
 </div>
