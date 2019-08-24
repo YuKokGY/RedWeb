@@ -8,9 +8,19 @@ public class News implements Serializable {
     private String title;
     private String url;
     private String time;
+    private String newssize;
 
 
     public News() {
+    }
+
+
+    public String getNewssize() {
+        return newssize;
+    }
+
+    public void setNewssize(String newssize) {
+        this.newssize = newssize;
     }
 
     public int getId() {

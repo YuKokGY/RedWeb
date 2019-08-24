@@ -38,7 +38,7 @@ public class UserContorller {
     public String toMain(Model model, Pic pic){
         List<Pic> pics=movieService.findpic();
         List<News> news = newsService.findnewsinfo();
-        System.out.println("新闻数量" + news.size());
+        System.out.println("热点新闻数量" + news.size());
         model.addAttribute("pics",pics);
         model.addAttribute("news", news);
         return "user/index";

@@ -16,11 +16,11 @@ public interface MovieService {
     //获取电影信息
     List<Movie> findmovieinfo();
 
-    //获取电影图片url
-    List<Moviepic> findmoviepic();
 
     //获取图片
     List<Pic> findpic();
+
+    List<Moviepic> findmoviepic();
 
     //添加图片
     void saveurlpic(Pic pic);

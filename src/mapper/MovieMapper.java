@@ -10,5 +10,4 @@ public interface MovieMapper {
 
     List<Movie> findallmovieinfo();
 
-
 }

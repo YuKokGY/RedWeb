@@ -18,7 +18,7 @@ public class MovieServiceImpl implements MovieService {
     @Autowired
     private MovieMapper movieMapper;
     @Autowired
-    MoviepicMapper moviepicMapper;
+    private MoviepicMapper moviePicMapper;
     @Autowired
     PicMapper picMapper;
 
@@ -29,22 +29,24 @@ public class MovieServiceImpl implements MovieService {
 
     @Override
     public void saveurl(Moviepic moviepic) {
-        moviepicMapper.addurl(moviepic);
+        moviePicMapper.adddurl(moviepic);
     }
+
 
     @Override
     public List<Movie> findmovieinfo() {
         return movieMapper.findallmovieinfo();
     }
 
-    @Override
-    public List<Moviepic> findmoviepic() {
-        return moviepicMapper.findallpic();
-    }
 
     @Override
     public List<Pic> findpic() {
         return picMapper.findallpic();
+    }
+
+    @Override
+    public List<Moviepic> findmoviepic() {
+        return moviePicMapper.findpic();
     }
 
     @Override

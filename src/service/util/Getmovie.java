@@ -20,6 +20,7 @@ public class Getmovie {
     @Autowired
     MovieService movieService;
     private Movie movie;
+    private Moviepic moviepic;
 
     public void setup() {
         //调用chrome driver  注意：路径是chromedriver.exe(要跟chrome版本对应才可以)
@@ -34,11 +35,11 @@ public class Getmovie {
     public void getnowplaying(){
         setup();
         movie = new Movie();
-        Moviepic moviepic=new Moviepic();
+        moviepic = new Moviepic();
         driver.get("https://movie.douban.com/cinema/nowplaying/qingyuan/");
         //爬取正在上映的电影
         List<WebElement> elements=driver.findElements(By.xpath("//*//div[@id=\"nowplaying\"]//li[@id]"));
-        System.out.println(elements.size());
+        System.out.println("电影数量" + elements.size());
         for (WebElement element:elements){
             //获取电影信息
             movie.setMoviename(element.getAttribute("data-title"));
@@ -56,7 +57,7 @@ public class Getmovie {
         }
 
         List<WebElement> picelement=driver.findElements(By.xpath("//*//div[@id=\"nowplaying\"]//li[@id]//img"));
-        System.out.println(elements.size());
+        System.out.println("电影图片数量" + elements.size());
         for (WebElement element:picelement){
             //获取电影信息
             moviepic.setUrl(element.getAttribute("src"));

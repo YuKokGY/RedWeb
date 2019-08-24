@@ -35,11 +35,11 @@ public class MovieController {
     //在数据库中拿数据
     @RequestMapping("/showMovie")
     public String showMovie(Model model){
-        List<Moviepic> moviepics=movieService.findmoviepic();
         List<Movie> movies=movieService.findmovieinfo();
+        List<Moviepic> moviepics = movieService.findmoviepic();
         String num = null;
-        for (Moviepic movie : moviepics) {
-            num = movie.getMoviesize();
+        for (Moviepic moviepic : moviepics) {
+            num = moviepic.getMoviesize();
         }
         model.addAttribute("movies",movies);
         model.addAttribute("moviepics",moviepics);

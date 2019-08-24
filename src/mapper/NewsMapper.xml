@@ -4,21 +4,59 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.NewsMapper">
     <cache></cache>
-
+    <!--热点新闻-->
     <insert id="addnewstitle" parameterType="news">
-        insert into news (title) value (#{title})
+        insert into news_hot (title,newssize) value (#{title},#{newssize})
     </insert>
 
     <insert id="addnewstime" parameterType="news">
-       update news set time=#{time} where time is null or time =''
+       update news_hot set time=#{time} where time is null or time =''
     </insert>
 
-    <insert id="addnewsurl" parameterType="news">
-       update news set url=#{url} where url is null or url=''
-    </insert>
 
     <select id="findnewsinfo" resultType="news">
-        select * from news order by id desc
+        select * from news_hot order by id desc
+    </select>
+
+    <!--国际新闻-->
+    <insert id="addnewstitle2" parameterType="news">
+        insert into news_guoji (title,newssize) value (#{title},#{newssize})
+    </insert>
+
+    <insert id="addnewstime2" parameterType="news">
+       update news_guoji set time=#{time} where time is null or time =''
+    </insert>
+
+
+    <select id="findnewsinfo2" resultType="news">
+        select * from news_guoji order by id desc
+    </select>
+    <!--体育新闻-->
+    <insert id="addnewstitle3" parameterType="news">
+        insert into news_tiyu (title,newssize) value (#{title},#{newssize})
+    </insert>
+
+    <insert id="addnewstime3" parameterType="news">
+       update news_tiyu set time=#{time} where time is null or time =''
+    </insert>
+
+
+    <select id="findnewsinfo3" resultType="news">
+        select * from news_tiyu order by id desc
+    </select>
+
+    <!--军事新闻-->
+    <insert id="addnewstitle4" parameterType="news">
+        insert into news_junshi (title,newsszie) value (#{title},#{newssize})
+    </insert>
+
+    <insert id="addnewstime4" parameterType="news">
+       update news_junshi set time=#{time} where time is null or time =''
+    </insert>
+
+
+    <select id="findnewsinfo4" resultType="news">
+        select * from news_junshi order by id desc
     </select>
 
 </mapper>

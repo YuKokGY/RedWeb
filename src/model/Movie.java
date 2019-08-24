@@ -11,19 +11,39 @@ public class Movie implements Serializable {
     private String movieregion;
     private String moviedirector;
     private String movieactors;
+    private String url;
+    private String moviesize;
 
     public Movie() {
     }
 
-    public Movie(String moviename, String movierate, String movietime, String movieregion, String moviedirector, String movieactors) {
+    public Movie(int id, String moviename, String movierate, String movietime, String movieregion, String moviedirector, String movieactors, String url, String moviesize) {
+        this.id = id;
         this.moviename = moviename;
         this.movierate = movierate;
         this.movietime = movietime;
         this.movieregion = movieregion;
         this.moviedirector = moviedirector;
         this.movieactors = movieactors;
+        this.url = url;
+        this.moviesize = moviesize;
     }
 
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getMoviesize() {
+        return moviesize;
+    }
+
+    public void setMoviesize(String moviesize) {
+        this.moviesize = moviesize;
+    }
 
     public int getId() {
         return id;

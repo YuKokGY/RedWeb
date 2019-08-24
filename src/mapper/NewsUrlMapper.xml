@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.NewsUrlMapper">
+    <cache></cache>
+
+
+    <insert id="addnewsurl" parameterType="news">
+        insert into news_hoturl (url)
+        value (#{url})
+    </insert>
+
+    <select id="findurl" resultType="news">
+        select * from news_hoturl order by id desc
+    </select>
+
+    <insert id="addnewsurl2" parameterType="news">
+        insert into news_hoturl (url)
+        value (#{url})
+    </insert>
+
+    <select id="findurl2" resultType="news">
+        select * from news_hoturl order by id desc
+    </select>
+
+    <insert id="addnewsurl3" parameterType="news">
+        insert into news_hoturl (url)
+        value (#{url})
+    </insert>
+
+    <select id="findurl3" resultType="news">
+        select * from news_hoturl order by id desc
+    </select>
+
+    <insert id="addnewsurl4" parameterType="news">
+        insert into news_hoturl (url)
+        value (#{url})
+    </insert>
+
+    <select id="findurl4" resultType="news">
+        select * from news_hoturl order by id desc
+    </select>
+
+</mapper>

@@ -5,8 +5,7 @@ import model.Moviepic;
 import java.util.List;
 
 public interface MoviepicMapper {
+    void adddurl(Moviepic moviepic);
 
-    public void addurl(Moviepic moviepic);
-
-    public List<Moviepic> findallpic();
+    List<Moviepic> findpic();
 }

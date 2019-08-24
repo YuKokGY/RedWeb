@@ -5,11 +5,12 @@
 <mapper namespace="mapper.MoviepicMapper">
     <cache></cache>
 
-    <insert id="addurl" parameterType="moviepic">
-        insert into pic (url,moviesize) value (#{url},#{moviesize})
+    <insert id="adddurl" parameterType="moviepic">
+        insert into pic (url,moviesize)
+        value (#{url},#{moviesize})
     </insert>
 
-    <select id="findallpic" resultType="moviepic">
+    <select id="findpic" resultType="moviepic">
         select * from pic order by id desc
     </select>
 
