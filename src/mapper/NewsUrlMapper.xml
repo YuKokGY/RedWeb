@@ -16,30 +16,30 @@
     </select>
 
     <insert id="addnewsurl2" parameterType="news">
-        insert into news_hoturl (url)
+        insert into news_guojiurl (url)
         value (#{url})
     </insert>
 
     <select id="findurl2" resultType="news">
-        select * from news_hoturl order by id desc
+        select * from news_guojiurl order by id desc
     </select>
 
     <insert id="addnewsurl3" parameterType="news">
-        insert into news_hoturl (url)
+        insert into news_tiyuurl (url)
         value (#{url})
     </insert>
 
     <select id="findurl3" resultType="news">
-        select * from news_hoturl order by id desc
+        select * from news_tiyuurl order by id desc
     </select>
 
     <insert id="addnewsurl4" parameterType="news">
-        insert into news_hoturl (url)
+        insert into news_junshiurl (url)
         value (#{url})
     </insert>
 
     <select id="findurl4" resultType="news">
-        select * from news_hoturl order by id desc
+        select * from news_junshiurl order by id desc
     </select>
 
 </mapper>
